@@ -90,6 +90,13 @@ const app = new Vue({
                     }
                 ],
             }
-        ]
+        ],
+        selUser : 0
+    },
+    methods: {
+        selectUser : function(index) {
+            this.selUser = index;
+            // console.log(this.selUser);
+        }
     }
 });

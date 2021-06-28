@@ -60,7 +60,7 @@
             <section id="users-list">
                 <ul class="list-none">
                     <!-- use v-for to auto-fill the list -->
-                    <li v-for="user in contacts" class="user pointer">
+                    <li v-for="(user,index) in contacts" class="user pointer" @click="selectUser(index)">
                         <img class="avatar" :src="'img/avatar' +  user.avatar + '.jpg'" alt="user avatar">
                         <span class="user-name">{{user.name}}</span>
                     </li>
@@ -75,9 +75,9 @@
             <!-- inizio header dx -->
             <header>
                 <div class="user">
-                    <img class="avatar" :src="'img/avatar' + contacts[0].avatar + '.jpg'" alt="user avatar">
+                    <img class="avatar" :src="'img/avatar' + contacts[selUser].avatar + '.jpg'" alt="user avatar">
                     <div class="description">
-                        <div>{{contacts[0].name}}</div>
+                        <div>{{contacts[selUser].name}}</div>
                         <div class="last-seen">Ultimo accesso oggi alle</div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
             <!-- inizio sezione chat -->
             <section class="chat">
                 <ul class="list-none">
-                    <li v-for="message in contacts[1].messages" class="clearfix">
+                    <li v-for="message in contacts[selUser].messages" class="clearfix">
                         <div :class="message.status">
                             {{message.text}}
                             <div class="date-time-msg">
