@@ -18,6 +18,10 @@ body::before{
     background-color: #009688;
 }
 
+.pointer:hover{
+    cursor: pointer;
+}
+
 .clearfix::after{
     content: '';
     display: table;
@@ -53,6 +57,7 @@ body::before{
     padding: 10px;
 }
 
+/* HEADER */
 header{
     width: 100%;
     background-color: #eaeaea;
@@ -73,6 +78,50 @@ header .icons i{
     color: gray;
 }
 
+/* NOTIFY */
+.notify{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: #8edafc;
+    padding: 15px;
+}
+
+.notify .bell{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: #8edafc;
+    font-size: 1.3rem;
+    margin: 0 10px;
+}
+
+.description a,
+span{
+    font-size: 0.7rem;
+    color: grey;
+}
+
+/* CHAT SRC */
+.chat-src{
+    background-color: #fafafa;
+}
+
+.chat-src > *{
+    border: none;
+    padding: 5px 20px;
+    background-color: white;
+    color: grey;
+}
+
+.chat-src input{
+    width: 80%;
+}
 
 
 
