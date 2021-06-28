@@ -89,7 +89,7 @@ const app = new Vue({
                         status: 'sent'
                     }
                 ],
-            },
+            }
         ]
     }
 });

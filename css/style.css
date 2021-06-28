@@ -179,10 +179,10 @@ header .icons i{
 .sent,
 .received{
     display: inline-block;
-    padding: 10px 20px;
+    padding: 15px 20px;
     min-width: 300px;
     max-width: 50%;
-    border-radius: 50px;
+    border-radius: 10px;
     position: relative;
     margin-bottom: 10px;
 }

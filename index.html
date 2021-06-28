@@ -75,9 +75,9 @@
             <!-- inizio header dx -->
             <header>
                 <div class="user">
-                    <img class="avatar" src="img/avatar_1.jpg" alt="user avatar">
+                    <img class="avatar" :src="'img/avatar' + contacts[0].avatar + '.jpg'" alt="user avatar">
                     <div class="description">
-                        <div>Michele</div>
+                        <div>{{contacts[0].name}}</div>
                         <div class="last-seen">Ultimo accesso oggi alle</div>
                     </div>
                 </div>
@@ -92,19 +92,11 @@
             <!-- inizio sezione chat -->
             <section class="chat">
                 <ul class="list-none">
-                    <li class="clearfix">
-                        <div :class="contacts[0].messages[0].status">
-                            {{contacts[0].messages[0].text}}
+                    <li v-for="message in contacts[1].messages" class="clearfix">
+                        <div :class="message.status">
+                            {{message.text}}
                             <div class="date-time-msg">
-                                {{contacts[0].messages[0].date}}
-                            </div>
-                        </div>
-                    </li>
-                    <li class="clearfix">
-                        <div :class="contacts[0].messages[2].status">
-                            {{contacts[0].messages[2].text}}
-                            <div class="date-time-msg">
-                                {{contacts[0].messages[2].date}}
+                                {{message.date}}
                             </div>
                         </div>
                     </li>
