@@ -22,6 +22,10 @@ body::before{
     cursor: pointer;
 }
 
+.list-none{
+    list-style: none;
+}
+
 .clearfix::after{
     content: '';
     display: table;
@@ -101,8 +105,7 @@ header .icons i{
     margin: 0 10px;
 }
 
-.description a,
-span{
+.description a{
     font-size: 0.7rem;
     color: grey;
 }
@@ -123,6 +126,18 @@ span{
     width: 80%;
 }
 
+/* USERS LIST */
+#users-list{
+    overflow-y: scroll;
+    height: calc(100% - 186px);
+}
+
+#users-list ul li:not(:last-child){
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
 
 
 
@@ -131,6 +146,6 @@ span{
 .debug .container{
     background-color: red;
 }
-.debug .left-side{
+/* .debug .left-side{
     background-color: yellow;
-}
+} */
