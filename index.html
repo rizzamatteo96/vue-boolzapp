@@ -59,17 +59,10 @@
             <!-- inizio sezione lista studenti -->
             <section id="users-list">
                 <ul class="list-none">
-                    <li class="user pointer">
-                        <img class="avatar" src="img/avatar_1.jpg" alt="user avatar">
-                        <span class="user-name">Michele</span>
-                    </li>
-                    <li class="user pointer">
-                        <img class="avatar" src="img/avatar_2.jpg" alt="user avatar">
-                        <span class="user-name">Fabio</span>
-                    </li>
-                    <li class="user pointer">
-                        <img class="avatar" src="img/avatar_3.jpg" alt="user avatar">
-                        <span class="user-name">Samuele</span>
+                    <!-- use v-for to auto-fill the list -->
+                    <li v-for="user in contacts" class="user pointer">
+                        <img class="avatar" :src="'img/avatar' +  user.avatar + '.jpg'" alt="user avatar">
+                        <span class="user-name">{{user.name}}</span>
                     </li>
                 </ul>
             </section>
