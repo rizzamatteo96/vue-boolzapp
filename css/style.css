@@ -1,4 +1,4 @@
-/* COMMONS */
+/** COMMONS */
 *{
     margin: 0;
     padding: 0;
@@ -7,6 +7,7 @@
 
 body{
     background-color: #dcdbd2;
+    font-family: 'Roboto', sans-serif;
 }
 
 body::before{
@@ -17,6 +18,21 @@ body::before{
     background-color: #009688;
 }
 
+.clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.float-l{
+    float: left;
+}
+
+.float-r{
+    float: right;
+}
+
+/** MAIN CONTAINER CONFIGURATION */
 .container{
     position: fixed;
     top: 50%;
@@ -26,6 +42,36 @@ body::before{
     width: 80%;
 }
 
+.left-side{
+    height: 100%;
+    width: 400px;
+    border-right: 1px solid lightgray;
+}
+
+.left-side > *,
+.right-side > *{
+    padding: 10px;
+}
+
+header{
+    width: 100%;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img.avatar{
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+header .icons i{
+    margin: 0 8px;
+    font-size: 1.3rem;
+    color: gray;
+}
 
 
 
@@ -35,4 +81,7 @@ body::before{
 /*! ------DEBUG------ */
 .debug .container{
     background-color: red;
+}
+.debug .left-side{
+    background-color: yellow;
 }
