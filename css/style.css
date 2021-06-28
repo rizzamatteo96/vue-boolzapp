@@ -144,7 +144,6 @@ header .icons i{
 #users-list ul li{
     padding: 10px;
     border-bottom: 1px solid #f6f6f6;
-    ;
 }
 
 #users-list ul li:hover{
@@ -174,7 +173,36 @@ header .icons i{
     width: 100%;
     background-image: url('../img/mine.jpg');
     overflow-y: scroll;
+    padding: 20px 50px;
+}
 
+.sent,
+.received{
+    display: inline-block;
+    padding: 10px 20px;
+    min-width: 300px;
+    max-width: 50%;
+    border-radius: 50px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.sent{
+    background-color: #DCF8C6;
+    float: right;
+}
+
+.received{
+    background-color: #fff;
+    float: left;
+}
+
+.date-time-msg{
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    font-size: 0.7rem;
+    color: gray;
 }
 
 
