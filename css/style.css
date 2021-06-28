@@ -18,6 +18,7 @@ body::before{
     background-color: #009688;
 }
 
+i:hover,
 .pointer:hover{
     cursor: pointer;
 }
@@ -48,6 +49,7 @@ body::before{
     transform: translate(-50%, -50%);
     height: 95vh;
     width: 80%;
+    background-color: #fff;
 }
 
 .left-side{
@@ -56,11 +58,17 @@ body::before{
     border-right: 1px solid lightgray;
 }
 
+.right-side{
+    height: 100%;
+    width: calc(100% - 400px);
+}
+
 .left-side > *,
 .right-side > *{
     padding: 10px;
 }
 
+/** LEFT SIDE */
 /* HEADER */
 header{
     width: 100%;
@@ -129,23 +137,71 @@ header .icons i{
 /* USERS LIST */
 #users-list{
     overflow-y: scroll;
+    padding: 0;
     height: calc(100% - 186px);
 }
 
-#users-list ul li:not(:last-child){
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid lightgray;
+#users-list ul li{
+    padding: 10px;
+    border-bottom: 1px solid #f6f6f6;
+    ;
 }
+
+#users-list ul li:hover{
+    background-color: #f5f5f5;
+}
+
+/** RIGHT SIDE */
+/* HEADER */
+.user{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user .description{
+    margin-left: 10px;
+}
+
+.last-seen{
+    font-size: 0.8rem;
+    color: grey;
+}
+
+/* CHAT */
+.chat{
+    height: calc(100% - 140px);
+    width: 100%;
+    background-image: url('../img/mine.jpg');
+    overflow-y: scroll;
+
+}
+
+
+/* MESSAGE */
+.message{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    background-color: #eaeaea;
+    font-size: 1.5rem;
+    color: gray;
+}
+
+.message input{
+    width: 85%;
+    padding: 20px 15px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+
 
 
 
 
 
 /*! ------DEBUG------ */
-.debug .container{
-    background-color: red;
-}
-/* .debug .left-side{
-    background-color: yellow;
-} */

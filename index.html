@@ -19,10 +19,10 @@
 <body class="debug">
     
     <!-- inizio contenitore principale -->
-    <div id="app" class="container">
+    <div id="app" class="container clearfix">
         
         <!-- inizio colonna sinistra -->
-        <section class="left-side">
+        <section class="left-side float-l">
             <!-- inizio header sx -->
             <header>
                 <div class="user">
@@ -59,15 +59,15 @@
             <!-- inizio sezione lista studenti -->
             <section id="users-list">
                 <ul class="list-none">
-                    <li class="user">
+                    <li class="user pointer">
                         <img class="avatar" src="img/avatar_1.jpg" alt="user avatar">
                         <span class="user-name">Michele</span>
                     </li>
-                    <li class="user">
+                    <li class="user pointer">
                         <img class="avatar" src="img/avatar_2.jpg" alt="user avatar">
                         <span class="user-name">Fabio</span>
                     </li>
-                    <li class="user">
+                    <li class="user pointer">
                         <img class="avatar" src="img/avatar_3.jpg" alt="user avatar">
                         <span class="user-name">Samuele</span>
                     </li>
@@ -78,8 +78,37 @@
         <!-- fine colonna sinistra -->
 
         <!-- inizio colonna destra -->
-        <section class="right-side">
-            
+        <section class="right-side float-l">
+            <!-- inizio header dx -->
+            <header>
+                <div class="user">
+                    <img class="avatar" src="img/avatar_1.jpg" alt="user avatar">
+                    <div class="description">
+                        <div>Michele</div>
+                        <div class="last-seen">Ultimo accesso oggi alle</div>
+                    </div>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </header>
+            <!-- fine header dx -->
+
+            <!-- inizio sezione chat -->
+            <section class="chat">
+
+            </section>
+            <!-- fine sezione chat -->
+
+            <!-- inizio sezione input messaggio -->
+            <section class="message">
+                <i class="far fa-smile"></i>
+                <input type="text" placeholder="Scrivi un messaggio">
+                <i class="fas fa-microphone"></i>
+            </section>
+            <!-- fine sezione input messaggio -->
         </section>
         <!-- fine colonna destra -->
 
