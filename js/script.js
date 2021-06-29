@@ -243,6 +243,7 @@ const app = new Vue({
             }
         },
 
+        // funzione che fa apparire il dropdown menu del singolo messaggio
         msgMenu : function(index) {
             // console.log('funzia?');
             const elemento = document.getElementById('dropDown' + index).classList;
@@ -257,13 +258,16 @@ const app = new Vue({
 
         },
 
+        // funzione che cancella il messaggio dopo la conferma dell'utente
         deleteMsg : function(index) {
-            const userConf = confirm('SEI SICURO DI VOLER CANCELLARE IL MESSAGGIO?')
-            if(userConf){
-                const test = this.contacts[this.selUser].messages;
-                // console.log(index);
-                test.splice(index,1);
-            }
+            const test = this.contacts[this.selUser].messages;
+            setTimeout(function(){
+                const userConf = confirm('SEI SICURO DI VOLER CANCELLARE IL MESSAGGIO?')
+                if(userConf){
+                    // console.log(index);
+                    test.splice(index,1);
+                }
+            }, 10);
         }
     }
 });
