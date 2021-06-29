@@ -208,17 +208,18 @@ const app = new Vue({
             });
         },
 
+        actualDT : function(){
+            let now = dayjs();
+            return now.format('DD/MM/YYYY') + ' ' + now.format('HH:mm:ss')
+        },
+
         insertMsg : function() {
             let msg = document.getElementById('msgText').value;
             let arrayMsg = this.contacts[this.selUser].messages;
 
-            console.log(msg);
             if (msg != '') {
-                let now = dayjs();
-                console.log(now.format('DD/MM/YYYY'));
-                console.log(now.format('HH:mm:ss'));
                 arrayMsg.push({
-                    date: now.format('DD/MM/YYYY') + ' ' + now.format('HH:mm:ss'),
+                    date: this.actualDT(),
                     text: msg,
                     status: 'sent'
                 });
@@ -226,9 +227,8 @@ const app = new Vue({
                 document.getElementById('msgText').value = msg;
 
                 setTimeout(function(){ 
-                    now = dayjs();
                     arrayMsg.push({
-                        date: now.format('DD/MM/YYYY') + ' ' + now.format('HH:mm:ss'),
+                        date: app.actualDT(),
                         text: 'ok',
                         status: 'received'
                     });
