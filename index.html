@@ -27,7 +27,7 @@
             <header>
                 <div class="user">
                     <img class="avatar" src="img/avatar_io.jpg" alt="user avatar">
-                    <span class="user-name">Nome Utente</span>
+                    <span class="user-name">Matteo Rizza</span>
                 </div>
                 <div class="icons">
                     <i class="fas fa-circle-notch"></i>
@@ -51,7 +51,7 @@
 
             <!-- inizio sezione ricerca chat -->
             <section class="chat-src">
-                <label for="src-chat" class="pointer"><i class="fas fa-search"></i></label>
+                <label for="src-chat" class="pointer" @click="filterUser"><i class="fas fa-search"></i></label>
                 <input name="src-chat" type="text" placeholder="Cerca o inizia una nuova chat" @keyup="filterUser" v-model="userFilter">
             </section>
             <!-- fine sezione ricerca chat -->

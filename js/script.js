@@ -25,7 +25,7 @@ const app = new Vue({
                 ],
             },
             {
-                name: 'Fabio',
+                name: 'Giulia',
                 avatar: '_2',
                 visible: true,
                 messages: [
@@ -69,7 +69,7 @@ const app = new Vue({
                 ],
             },
             {
-                name: 'Gino',
+                name: 'Stefano',
                 avatar: '_4',
                 visible: true,
                 messages: [
