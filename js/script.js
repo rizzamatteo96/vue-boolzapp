@@ -23,6 +23,7 @@ const app = new Vue({
                         status: 'received'
                     }
                 ],
+                lastSeen: ''
             },
             {
                 name: 'Giulia',
@@ -45,6 +46,7 @@ const app = new Vue({
                         status: 'sent'
                     }
                 ],
+                lastSeen: ''
             },
             {
                 name: 'Daniele',
@@ -67,6 +69,7 @@ const app = new Vue({
                         status: 'sent'
                     }
                 ],
+                lastSeen: ''
             },
             {
                 name: 'Stefano',
@@ -89,6 +92,7 @@ const app = new Vue({
                         status: 'sent'
                     }
                 ],
+                lastSeen: ''
             },
             {
                 name: 'Francesco',
@@ -111,6 +115,7 @@ const app = new Vue({
                         status: 'sent'
                     }
                 ],
+                lastSeen: ''
             },
             {
                 name: 'Valentina',
@@ -143,6 +148,7 @@ const app = new Vue({
                         status: 'received'
                     }
                 ],
+                lastSeen: ''
             },
             {
                 name: 'Roberto',
@@ -165,6 +171,7 @@ const app = new Vue({
                         status: 'sent'
                     }
                 ],
+                lastSeen: ''
             },
             {
                 name: 'Flavio',
@@ -187,7 +194,8 @@ const app = new Vue({
                         status: 'sent'
                     }
                 ],
-            },
+                lastSeen: ''
+            }
         ],
         // Varibile per tracciare il numero dell'utente selezionato
         selUser : 0,
@@ -239,8 +247,12 @@ const app = new Vue({
                         text: 'ok',
                         status: 'received'
                     });
+
+                    app.updateLastSeen();
                 }, 1000);
             }
+
+            this.updateLastSeen();
         },
 
         // funzione che fa apparire il dropdown menu del singolo messaggio
@@ -268,6 +280,19 @@ const app = new Vue({
                     test.splice(index,1);
                 }
             }, 10);
+
+            this.updateLastSeen();
+        },
+
+        // funzione che aggiorna la variabile last seen di tutti gli oggetti
+        updateLastSeen : function(){
+            this.contacts.forEach(item => {
+                const lastSeen = item.messages[item.messages.length - 1].date;
+                item.lastSeen = lastSeen;
+            });
         }
+    },
+    created: function() {
+        this.updateLastSeen();
     }
 });

@@ -238,11 +238,12 @@ section .chat li > div:hover .open-menu{
     position: absolute;
     right: 0;
     top: 20px;
-    width: 150px;
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 0 5px grey;
     z-index: 999;
+    padding: 15px;
+    width: 150px;
+    box-shadow: 0 0 5px grey;
+    border-radius: 5px;
+    background-color: #fff;
 }
 
 .drop-menu ul li:not(:last-child){
@@ -250,7 +251,8 @@ section .chat li > div:hover .open-menu{
 }
 
 .chat div[id*="dropDown"] li:hover{
-    background-color: lightgray;
+    color: black;
+    text-decoration: underline;
 }
 
 
@@ -272,12 +274,3 @@ section .chat li > div:hover .open-menu{
     border-radius: 10px;
     border: none;
 }
-
-
-
-
-
-
-
-
-/*! ------DEBUG------ */
