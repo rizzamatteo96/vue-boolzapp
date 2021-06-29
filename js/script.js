@@ -189,15 +189,19 @@ const app = new Vue({
                 ],
             },
         ],
+        // Varibile per tracciare il numero dell'utente selezionato
         selUser : 0,
+        // filtro per lista utenti
         userFilter : ''
     },
     methods: {
+        // funzione che mi seleziona l'utente quando ci vado a cliccare con il mouse
         selectUser : function(index) {
             this.selUser = index;
             // console.log(this.selUser);
         },
 
+        // funzione che filtra la lista di utenti quando vado a scrivere nell'input
         filterUser : function(){
             // console.log('funzia?');
             this.contacts.forEach(element => {
@@ -208,11 +212,14 @@ const app = new Vue({
             });
         },
 
+        // funzione che mi restituisce la data e l'ora attuale
         actualDT : function(){
             let now = dayjs();
             return now.format('DD/MM/YYYY') + ' ' + now.format('HH:mm:ss')
         },
 
+        // funzione che mi inserisce il messaggio scritto SOLO SE c'è del testo all'interno dell'input
+        // dopo aver inviato il messaggio, questa funzione si occupa di salvarlo all'interno dell'array e restituire una risposta dopo 1 secondo
         insertMsg : function() {
             let msg = document.getElementById('msgText').value;
             let arrayMsg = this.contacts[this.selUser].messages;
