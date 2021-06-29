@@ -238,18 +238,28 @@ const app = new Vue({
                     text: msg,
                     status: 'sent'
                 });
-                msg = '';
-                document.getElementById('msgText').value = msg;
 
-                setTimeout(function(){ 
+                //! EASTER EGG
+                if(msg == '/lozio'){
                     arrayMsg.push({
                         date: app.actualDT(),
-                        text: 'ok',
+                        text: 'LO ZIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',
                         status: 'received'
                     });
+                } else {
+                    setTimeout(function(){ 
+                        arrayMsg.push({
+                            date: app.actualDT(),
+                            text: 'ok',
+                            status: 'received'
+                        });
+    
+                        app.updateLastSeen();
+                    }, 1000);
+                }
 
-                    app.updateLastSeen();
-                }, 1000);
+                msg = '';
+                document.getElementById('msgText').value = msg;
             }
 
             this.updateLastSeen();
