@@ -5,6 +5,7 @@ const app = new Vue({
             {
                 name: 'Michele',
                 avatar: '_1',
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2021 15:30:55',
@@ -26,6 +27,7 @@ const app = new Vue({
             {
                 name: 'Fabio',
                 avatar: '_2',
+                visible: true,
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -47,6 +49,7 @@ const app = new Vue({
             {
                 name: 'Daniele',
                 avatar: '_3',
+                visible: true,
                 messages: [
                     {
                         date: '20/03/2021 16:30:00',
@@ -68,6 +71,7 @@ const app = new Vue({
             {
                 name: 'Gino',
                 avatar: '_4',
+                visible: true,
                 messages: [
                     {
                         date: '20/03/2021 16:30:00',
@@ -89,6 +93,7 @@ const app = new Vue({
             {
                 name: 'Francesco',
                 avatar: '_5',
+                visible: true,
                 messages: [
                     {
                         date: '20/03/2021 16:30:00',
@@ -108,8 +113,9 @@ const app = new Vue({
                 ],
             },
             {
-                name: 'Lorenzo',
+                name: 'Valentina',
                 avatar: '_6',
+                visible: true,
                 messages: [
                     {
                         date: '20/03/2021 16:30:00',
@@ -141,6 +147,7 @@ const app = new Vue({
             {
                 name: 'Roberto',
                 avatar: '_7',
+                visible: true,
                 messages: [
                     {
                         date: '20/03/2021 16:30:00',
@@ -162,6 +169,7 @@ const app = new Vue({
             {
                 name: 'Flavio',
                 avatar: '_8',
+                visible: true,
                 messages: [
                     {
                         date: '20/03/2021 16:30:00',
@@ -181,18 +189,30 @@ const app = new Vue({
                 ],
             },
         ],
-        selUser : 0
+        selUser : 0,
+        userFilter : ''
     },
     methods: {
         selectUser : function(index) {
             this.selUser = index;
             // console.log(this.selUser);
         },
+
+        filterUser : function(){
+            // console.log('funzia?');
+            this.contacts.forEach(element => {
+                const userListSrc = element.name.toLowerCase();
+                const filter = this.userFilter.toLowerCase();
+                const found = userListSrc.indexOf(filter);
+                element.visible = (found == -1) ? false : true;
+            });
+        },
+
         insertMsg : function() {
             let msg = document.getElementById('msgText').value;
             let arrayMsg = this.contacts[this.selUser].messages;
 
-            // console.log(msg);
+            console.log(msg);
             if (msg != '') {
                 let now = dayjs();
                 console.log(now.format('DD/MM/YYYY'));

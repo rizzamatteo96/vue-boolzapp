@@ -52,7 +52,7 @@
             <!-- inizio sezione ricerca chat -->
             <section class="chat-src">
                 <label for="src-chat" class="pointer"><i class="fas fa-search"></i></label>
-                <input name="src-chat" type="text" placeholder="Cerca o inizia una nuova chat">
+                <input name="src-chat" type="text" placeholder="Cerca o inizia una nuova chat" @keyup="filterUser" v-model="userFilter">
             </section>
             <!-- fine sezione ricerca chat -->
 
@@ -60,7 +60,7 @@
             <section id="users-list">
                 <ul class="list-none">
                     <!-- use v-for to auto-fill the list -->
-                    <li v-for="(user,index) in contacts" :class="(index == selUser) ? 'user-select' : ''" class="user pointer" @click="selectUser(index)">
+                    <li v-for="(user,index) in contacts" v-if="user.visible" :class="(index == selUser) ? 'user-select' : ''" class="user pointer" @click="selectUser(index)">
                         <img class="avatar" :src="'img/avatar' +  user.avatar + '.jpg'" alt="user avatar">
                         <span class="user-name">{{user.name}}</span>
                     </li>
