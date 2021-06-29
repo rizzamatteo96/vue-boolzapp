@@ -244,7 +244,26 @@ const app = new Vue({
         },
 
         msgMenu : function(index) {
+            // console.log('funzia?');
+            const elemento = document.getElementById('dropDown' + index).classList;
             
+            if(elemento.value.includes('d-none')){
+                elemento.remove('d-none');
+                elemento.add('d-block');
+            } else {
+                elemento.remove('d-block');
+                elemento.add('d-none');
+            }
+
+        },
+
+        deleteMsg : function(index) {
+            const userConf = confirm('SEI SICURO DI VOLER CANCELLARE IL MESSAGGIO?')
+            if(userConf){
+                const test = this.contacts[this.selUser].messages;
+                // console.log(index);
+                test.splice(index,1);
+            }
         }
     }
 });

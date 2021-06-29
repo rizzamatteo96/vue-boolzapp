@@ -10,6 +10,14 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+.d-none{
+    display: none;
+}
+
+.d-block{
+    display: block;
+}
+
 body::before{
     display: block;
     content: '';
@@ -239,6 +247,10 @@ section .chat li > div:hover .open-menu{
 
 .drop-menu ul li:not(:last-child){
     margin-bottom: 10px;
+}
+
+.chat div[id*="dropDown"] li:hover{
+    background-color: lightgray;
 }
 
 
