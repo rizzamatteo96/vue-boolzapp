@@ -100,15 +100,26 @@ const app = new Vue({
         },
         insertMsg : function() {
             let msg = document.getElementById('msgText').value;
-            console.log(msg);
+            let arrayMsg = this.contacts[this.selUser].messages;
+            
+            // console.log(msg);
             if (msg != '') {
-                this.contacts[this.selUser].messages.push({
+                arrayMsg.push({
                     date: '10/01/2020 15:50:00',
                     text: msg,
                     status: 'sent'
                 });
                 msg = '';
                 document.getElementById('msgText').value = msg;
+
+                setTimeout(function(){ 
+                    arrayMsg.push({
+                        date: '10/01/2020 15:50:00',
+                        text: 'ok',
+                        status: 'received'
+                    });
+                }, 1000);
+
             }
         }     
     }
