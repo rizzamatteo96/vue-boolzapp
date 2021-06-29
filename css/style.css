@@ -150,6 +150,10 @@ header .icons i{
     background-color: #f5f5f5;
 }
 
+.user-select{
+    background-color: lightgrey;
+}
+
 /** RIGHT SIDE */
 /* HEADER */
 .user{
