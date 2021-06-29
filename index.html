@@ -107,7 +107,7 @@
             <!-- inizio sezione input messaggio -->
             <section class="message">
                 <i class="far fa-smile"></i>
-                <input type="text" placeholder="Scrivi un messaggio">
+                <input id="msgText" type="text" placeholder="Scrivi un messaggio" @keyup.enter="insertMsg">
                 <i class="fas fa-microphone"></i>
             </section>
             <!-- fine sezione input messaggio -->
