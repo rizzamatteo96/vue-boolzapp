@@ -209,6 +209,38 @@ header .icons i{
     color: gray;
 }
 
+.open-menu{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: gray;
+    display: none;
+}
+
+section .chat li > div:hover{
+    z-index: 10;
+}
+
+section .chat li > div:hover .open-menu{
+    display: block;
+}
+
+.drop-menu{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 150px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 5px grey;
+    z-index: 999;
+}
+
+.drop-menu ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+
 
 /* MESSAGE */
 .message{

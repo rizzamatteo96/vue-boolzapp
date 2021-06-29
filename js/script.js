@@ -241,6 +241,10 @@ const app = new Vue({
                     });
                 }, 1000);
             }
+        },
+
+        msgMenu : function(index) {
+            
         }
     }
 });

@@ -98,6 +98,17 @@
                             <div class="date-time-msg">
                                 {{message.date}}
                             </div>
+                            <!-- inizio menu drop down -->
+                            <div class="open-menu pointer" @click="msgMenu">
+                                <i class="fas fa-chevron-down"></i>
+                                <div class="drop-menu">
+                                    <ul class="list-none">
+                                        <li>Message info</li>
+                                        <li>Delete message</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- fine menu drop down -->
                         </div>
                     </li>
                 </ul>
