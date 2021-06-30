@@ -271,35 +271,40 @@ const app = new Vue({
                 arrayMsg.push({
                     date: this.actualDT(),
                     text: msg,
-                    status: 'sent'
+                    status: 'sent',
+                    readed: false
                 });
 
-                this.contacts[this.selUser].isWriting = true;
-
+                app.userMessage = '';
+                
                 //! EASTER EGG
-                if(msg == '/lozio'){
-                    arrayMsg.push({
-                        date: app.actualDT(),
-                        text: 'LO ZIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',
-                        status: 'received'
-                    });
-                    this.contacts[this.selUser].isWriting = false;
-                    app.updateLastSeen();
-                } else {
-                    setTimeout(function(){ 
-                        arrayMsg.push({
-                            date: app.actualDT(),
-                            text: 'ok',
-                            status: 'received'
-                        });
-                        
-                        app.contacts[app.selUser].isWriting = false;
-                        app.updateLastSeen();
-                    }, 1000);
-                }
+                setTimeout(function(){
+                    // dopo un secondo l'utente fake legge il messaggio e inizia a scrivere
+                    arrayMsg[arrayMsg.length - 1].readed = true;
+                    app.contacts[app.selUser].isWriting = true;
 
-                msg = '';
-                this.userMessage = msg;
+                    setTimeout(function(){
+                        if(msg == '/lozio'){
+                            arrayMsg.push({
+                                date: app.actualDT(),
+                                text: 'LO ZIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',
+                                status: 'received'
+                            });
+                            this.contacts[this.selUser].isWriting = false;
+                            app.updateLastSeen();
+                        } else {
+                            arrayMsg.push({
+                                date: app.actualDT(),
+                                text: 'ok',
+                                status: 'received'
+                            });
+                            
+                            app.contacts[app.selUser].isWriting = false;
+                            app.updateLastSeen();
+                        }
+                        msg = '';
+                    },2000);
+                }, 1000);               
             }
 
             this.updateLastSeen();
