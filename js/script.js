@@ -303,7 +303,7 @@ const app = new Vue({
                                 text: 'LO ZIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',
                                 status: 'received'
                             });
-                            this.contacts[this.selUser].isWriting = false;
+                            app.contacts[app.selUser].isWriting = false;
                             app.updateLastSeen();
                         } else {
                             arrayMsg.push({
