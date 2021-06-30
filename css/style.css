@@ -10,6 +10,10 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+.txt-black{
+    color: black !important;
+}
+
 .d-none{
     display: none;
 }
@@ -321,6 +325,14 @@ section .chat li > div:hover .open-menu{
     text-decoration: underline;
 }
 
+#chat-src{
+    position: absolute;
+    right: 120px;
+    top: 35px;
+    transform: translateY(-50%);
+    padding: 5px;
+    border-radius: 5px;
+}
 
 /* MESSAGE */
 .message{
