@@ -252,7 +252,7 @@ const app = new Vue({
                 if(msg == '/lozio'){
                     arrayMsg.push({
                         date: app.actualDT(),
-                        text: 'LO ZIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',
+                        text: 'LO ZIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',
                         status: 'received'
                     });
                 } else {

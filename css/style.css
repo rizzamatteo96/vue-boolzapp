@@ -176,15 +176,24 @@ header .icons i{
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 90%;
+}
+
+header .user{
+    width: unset;
 }
 
 .user .description{
     margin-left: 10px;
+    width: calc(100% - 60px)
 }
 
 .last-seen{
     font-size: 0.8rem;
     color: grey;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* CHAT */
@@ -205,6 +214,8 @@ header .icons i{
     border-radius: 10px;
     position: relative;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
+    word-wrap: break-word;
 }
 
 .sent{
@@ -212,9 +223,51 @@ header .icons i{
     float: right;
 }
 
+.sent::before {
+    content: '';
+    position: absolute;
+    visibility: visible;
+    top: -1px;
+    right: -10px;
+    border: 10px solid transparent;
+    border-top: 10px solid #ccc;
+}
+  
+.sent::after {
+    content: '';
+    position: absolute;
+    visibility: visible;
+    top: 0;
+    right: -8px;
+    border: 10px solid transparent;
+    border-top: 10px solid #DCF8C6;
+    clear: both;
+}
+
 .received{
     background-color: #fff;
     float: left;
+}
+
+.received::before {
+    content: '';
+    position: absolute;
+    visibility: visible;
+    top: -1px;
+    left: -10px;
+    border: 10px solid transparent;
+    border-top: 10px solid #ccc;
+}
+  
+.received::after {
+    content: '';
+    position: absolute;
+    visibility: visible;
+    top: 0;
+    left: -8px;
+    border: 10px solid transparent;
+    border-top: 10px solid #fff;
+    clear: both;
 }
 
 .date-time-msg{
