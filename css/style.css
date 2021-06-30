@@ -152,6 +152,14 @@ header .icons i{
 #users-list ul li{
     padding: 10px;
     border-bottom: 1px solid #f6f6f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.last-hour{
+    font-size: 0.8rem;
+    color: grey;
 }
 
 #users-list ul li:hover{
