@@ -300,6 +300,11 @@ const app = new Vue({
             return Math.floor(Math.random() * (max - min + 1) ) + min;
         },
 
+        // funzione che scrolla la chat fino alla fine
+        scrollDown : function(){
+            document.getElementById('viewBottom').scrollIntoView({behavior: "smooth"});
+        },
+
         // funzione che mi inserisce il messaggio scritto SOLO SE c'è del testo all'interno dell'input
         // dopo aver inviato il messaggio, questa funzione si occupa di salvarlo all'interno dell'array e restituire una risposta dopo 1 secondo
         insertMsg : function() {
@@ -311,8 +316,11 @@ const app = new Vue({
                     date: this.actualDT(),
                     text: msg,
                     status: 'sent',
+                    openMenu : false,
                     readed: false
                 });
+
+                this.scrollDown();
 
                 app.userMessage = '';
                 
@@ -327,7 +335,8 @@ const app = new Vue({
                             arrayMsg.push({
                                 date: app.actualDT(),
                                 text: 'LO ZIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',
-                                status: 'received'
+                                status: 'received',
+                                openMenu : false
                             });
                             app.contacts[app.selUser].isWriting = false;
                             app.updateLastSeen();
@@ -335,12 +344,14 @@ const app = new Vue({
                             arrayMsg.push({
                                 date: app.actualDT(),
                                 text: app.fakeUserMsg[app.randomNum(0,app.fakeUserMsg.length-1)],
-                                status: 'received'
+                                status: 'received',
+                                openMenu : false
                             });
                             
                             app.contacts[app.selUser].isWriting = false;
                             app.updateLastSeen();
                         }
+                        app.scrollDown();
                         msg = '';
                     },2000);
                 }, 1000);               
