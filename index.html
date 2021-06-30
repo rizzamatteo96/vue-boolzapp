@@ -129,7 +129,8 @@
             <section class="message">
                 <i class="far fa-smile"></i>
                 <input id="msgText" type="text" placeholder="Scrivi un messaggio" v-model="userMessage" @keyup.enter="insertMsg">
-                <i class="fas fa-microphone"></i>
+                <i v-if="userMessage == ''" class="fas fa-microphone"></i>
+                <i v-else @click="insertMsg" class="fas fa-paper-plane"></i>
             </section>
             <!-- fine sezione input messaggio -->
         </section>

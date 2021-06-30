@@ -29,6 +29,7 @@ body::before{
 i:hover,
 .pointer:hover{
     cursor: pointer;
+    color: black;
 }
 
 .list-none{
@@ -327,6 +328,10 @@ section .chat li > div:hover .open-menu{
     background-color: #eaeaea;
     font-size: 1.5rem;
     color: gray;
+}
+
+.message .fa-paper-plane{
+    font-size: 1rem;
 }
 
 .message input{
