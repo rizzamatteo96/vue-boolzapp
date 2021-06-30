@@ -88,7 +88,11 @@
                     <img class="avatar" :src="'img/avatar' + contacts[selUser].avatar + '.jpg'" alt="user avatar">
                     <div class="description">
                         <div>{{contacts[selUser].name}}</div>
-                        <div class="last-seen">Ultimo accesso: {{contacts[selUser].lastSeen}}</div>
+                        <div v-if="!contacts[selUser].isWriting" class="last-seen">Ultimo accesso: {{contacts[selUser].lastSeen}}</div>
+                        <div v-else class="isWriting">
+                            Sta scrivendo...
+                            <i class="fas fa-pen"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="icons">
@@ -139,6 +143,8 @@
     </div>
     <!-- fine contenitore principale -->
 
+    <!-- collegamento emoji cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>
     <!-- collegamento cdn day.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.5/dayjs.min.js" integrity="sha512-n6mJ6AqoohFfbgx3x7N162B/zRNs5x8uvsStlHC+LCvqwKW7oiucE07Ehatg62ybx6Vo1ctaZwm/4sSRUTSIQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- collegamento a my script -->

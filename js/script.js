@@ -24,7 +24,8 @@ const app = new Vue({
                     }
                 ],
                 lastSeen: '',
-                lastMsg: ''
+                lastMsg: '',
+                isWriting: false
             },
             {
                 name: 'Giulia',
@@ -48,8 +49,8 @@ const app = new Vue({
                     }
                 ],
                 lastSeen: '',
-                lastMsg: ''
-
+                lastMsg: '',
+                isWriting: false
             },
             {
                 name: 'Daniele',
@@ -73,7 +74,8 @@ const app = new Vue({
                     }
                 ],
                 lastSeen: '',
-                lastMsg: ''
+                lastMsg: '',
+                isWriting: false
             },
             {
                 name: 'Stefano',
@@ -97,7 +99,8 @@ const app = new Vue({
                     }
                 ],
                 lastSeen: '',
-                lastMsg: ''
+                lastMsg: '',
+                isWriting: false
             },
             {
                 name: 'Francesco',
@@ -121,7 +124,8 @@ const app = new Vue({
                     }
                 ],
                 lastSeen: '',
-                lastMsg: ''
+                lastMsg: '',
+                isWriting: false
             },
             {
                 name: 'Valentina',
@@ -155,7 +159,8 @@ const app = new Vue({
                     }
                 ],
                 lastSeen: '',
-                lastMsg: ''
+                lastMsg: '',
+                isWriting: false
             },
             {
                 name: 'Roberto',
@@ -179,7 +184,8 @@ const app = new Vue({
                     }
                 ],
                 lastSeen: '',
-                lastMsg: ''
+                lastMsg: '',
+                isWriting: false
             },
             {
                 name: 'Flavio',
@@ -203,7 +209,8 @@ const app = new Vue({
                     }
                 ],
                 lastSeen: '',
-                lastMsg: ''
+                lastMsg: '',
+                isWriting: false
             }
         ],
         // Varibile per tracciare il numero dell'utente selezionato
@@ -250,6 +257,8 @@ const app = new Vue({
                     status: 'sent'
                 });
 
+                this.contacts[this.selUser].isWriting = true;
+
                 //! EASTER EGG
                 if(msg == '/lozio'){
                     arrayMsg.push({
@@ -257,6 +266,8 @@ const app = new Vue({
                         text: 'LO ZIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO',
                         status: 'received'
                     });
+                    this.contacts[this.selUser].isWriting = false;
+                    app.updateLastSeen();
                 } else {
                     setTimeout(function(){ 
                         arrayMsg.push({
@@ -264,7 +275,8 @@ const app = new Vue({
                             text: 'ok',
                             status: 'received'
                         });
-    
+                        
+                        app.contacts[app.selUser].isWriting = false;
                         app.updateLastSeen();
                     }, 1000);
                 }
