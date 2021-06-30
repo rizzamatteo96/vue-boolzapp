@@ -11,18 +11,21 @@ const app = new Vue({
                         date: '10/01/2021 15:30:55',
                         text: 'Hai portato a spasso il cane?',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     },
                     {
                         date: '10/01/2021 15:50:00',
                         text: 'Ricordati di dargli da mangiare',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     },
                     {
                         date: '10/01/2021 16:15:22',
                         text: 'Tutto fatto!',
-                        status: 'received'
+                        status: 'received',
+                        openMenu : false
                     }
                 ],
                 lastSeen: '',
@@ -38,17 +41,20 @@ const app = new Vue({
                         date: '20/03/2020 16:30:00',
                         text: 'Ciao come stai?',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     },
                     {
                         date: '20/03/2020 16:30:55',
                         text: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
+                        status: 'received',
+                        openMenu : false
                     },
                     {
                         date: '20/03/2020 16:35:00',
                         text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     }
                 ],
@@ -65,17 +71,20 @@ const app = new Vue({
                         date: '20/03/2021 16:30:00',
                         text: 'Lo zioooooooooooooooo',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     },
                     {
                         date: '20/03/2021 16:30:55',
                         text: 'Lo ziooooooooooooooooooooo',
-                        status: 'received'
+                        status: 'received',
+                        openMenu : false
                     },
                     {
                         date: '20/03/2021 16:35:00',
                         text: 'Ciaooooooooooooo',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     }
                 ],
@@ -92,17 +101,20 @@ const app = new Vue({
                         date: '20/03/2021 16:30:00',
                         text: 'Ciao Gino, come va la vita?',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     },
                     {
                         date: '20/03/2021 16:30:55',
                         text: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
+                        status: 'received',
+                        openMenu : false
                     },
                     {
                         date: '20/03/2021 16:35:00',
                         text: 'Si può fare',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     }
                 ],
@@ -119,17 +131,20 @@ const app = new Vue({
                         date: '20/03/2021 16:30:00',
                         text: 'Lo ziooooooooooooooooooo ',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     },
                     {
                         date: '20/03/2021 16:30:55',
                         text: 'Guarda qua lo ziooooooooooooooo',
-                        status: 'received'
+                        status: 'received',
+                        openMenu : false
                     },
                     {
                         date: '20/03/2021 16:35:00',
                         text: 'Vado nell\'altra chat',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     }
                 ],
@@ -146,29 +161,34 @@ const app = new Vue({
                         date: '20/03/2021 16:30:00',
                         text: 'Ehy! Pizzata stasera?',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     },
                     {
                         date: '20/03/2021 16:30:55',
                         text: 'Beh',
-                        status: 'received'
+                        status: 'received',
+                        openMenu : false
                     },
                     {
                         date: '20/03/2021 16:38:00',
                         text: '👍',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     },
                     {
                         date: '20/03/2021 16:40:00',
                         text: 'A che ora?',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     },
                     {
                         date: '20/03/2021 16:40:30',
                         text: 'Vedi te, per me è uguale',
-                        status: 'received'
+                        status: 'received',
+                        openMenu : false
                     }
                 ],
                 lastSeen: '',
@@ -184,17 +204,20 @@ const app = new Vue({
                         date: '20/03/2021 16:30:00',
                         text: 'Stasera cena liquida?',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     },
                     {
                         date: '20/03/2021 16:30:55',
                         text: 'Sempre sta fatta',
-                        status: 'received'
+                        status: 'received',
+                        openMenu : false
                     },
                     {
                         date: '20/03/2021 16:35:00',
                         text: '🎉',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     }
                 ],
@@ -211,17 +234,20 @@ const app = new Vue({
                         date: '20/03/2021 16:30:00',
                         text: 'Allora come va la vita?',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     },
                     {
                         date: '20/03/2021 16:30:55',
                         text: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
+                        status: 'received',
+                        openMenu : false
                     },
                     {
                         date: '20/03/2021 16:35:00',
                         text: 'Mi piacerebbe.😊',
                         status: 'sent',
+                        openMenu : false,
                         readed: true
                     }
                 ],
@@ -321,21 +347,6 @@ const app = new Vue({
             }
 
             this.updateLastSeen();
-        },
-
-        // funzione che fa apparire il dropdown menu del singolo messaggio
-        msgMenu : function(index) {
-            // console.log('funzia?');
-            const elemento = document.getElementById('dropDown' + index).classList;
-            
-            if(elemento.value.includes('d-none')){
-                elemento.remove('d-none');
-                elemento.add('d-block');
-            } else {
-                elemento.remove('d-block');
-                elemento.add('d-none');
-            }
-
         },
 
         // funzione che cancella il messaggio dopo la conferma dell'utente

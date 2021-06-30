@@ -116,9 +116,9 @@
                                 <i v-if="message.status == 'sent'" :class="(message.status == 'sent' && message.readed) ? 'blue-tick' : ''" class="fas fa-check-double"></i>
                             </div>
                             <!-- inizio menu drop down -->
-                            <div class="open-menu pointer" @click="msgMenu(indice)">
+                            <div class="open-menu pointer" @click="message.openMenu = (message.openMenu)? false : true">
                                 <i class="fas fa-chevron-down"></i>
-                                <div :id="'dropDown' + indice" class="drop-menu d-none">
+                                <div :id="'dropDown' + indice" class="drop-menu" :class="(message.openMenu) ? 'd-block' : 'd-none'">
                                     <ul class="list-none">
                                         <li>Message info</li>
                                         <li @click="deleteMsg(indice)">Delete message</li>
