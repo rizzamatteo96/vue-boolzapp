@@ -321,10 +321,6 @@ section .chat li > div:hover .open-menu{
     text-decoration: underline;
 }
 
-#viewBottom{
-    height: 30px;
-}
-
 
 /* MESSAGE */
 .message{

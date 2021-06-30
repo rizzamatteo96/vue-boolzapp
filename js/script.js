@@ -276,6 +276,7 @@ const app = new Vue({
         selectUser : function(index) {
             this.selUser = index;
             // console.log(this.selUser);
+            this.scrollDown();
         },
 
         // funzione che filtra la lista di utenti quando vado a scrivere nell'input
@@ -302,7 +303,10 @@ const app = new Vue({
 
         // funzione che scrolla la chat fino alla fine
         scrollDown : function(){
-            document.getElementById('viewBottom').scrollIntoView({behavior: "smooth"});
+            setTimeout(() => {
+                document.getElementById('viewBottom').scrollIntoView({behavior: "smooth"});
+            }, 10);
+            
         },
 
         // funzione che mi inserisce il messaggio scritto SOLO SE c'è del testo all'interno dell'input
