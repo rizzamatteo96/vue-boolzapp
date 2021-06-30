@@ -209,7 +209,9 @@ const app = new Vue({
         // Varibile per tracciare il numero dell'utente selezionato
         selUser : 0,
         // filtro per lista utenti
-        userFilter : ''
+        userFilter : '',
+        // testo del messaggio
+        userMessage : ''
     },
     methods: {
         // funzione che mi seleziona l'utente quando ci vado a cliccare con il mouse
@@ -238,7 +240,7 @@ const app = new Vue({
         // funzione che mi inserisce il messaggio scritto SOLO SE c'è del testo all'interno dell'input
         // dopo aver inviato il messaggio, questa funzione si occupa di salvarlo all'interno dell'array e restituire una risposta dopo 1 secondo
         insertMsg : function() {
-            let msg = document.getElementById('msgText').value;
+            let msg = this.userMessage;
             let arrayMsg = this.contacts[this.selUser].messages;
 
             if (msg != '') {
@@ -268,7 +270,7 @@ const app = new Vue({
                 }
 
                 msg = '';
-                document.getElementById('msgText').value = msg;
+                this.userMessage = msg;
             }
 
             this.updateLastSeen();

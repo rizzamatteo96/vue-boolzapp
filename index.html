@@ -128,7 +128,7 @@
             <!-- inizio sezione input messaggio -->
             <section class="message">
                 <i class="far fa-smile"></i>
-                <input id="msgText" type="text" placeholder="Scrivi un messaggio" @keyup.enter="insertMsg">
+                <input id="msgText" type="text" placeholder="Scrivi un messaggio" v-model="userMessage" @keyup.enter="insertMsg">
                 <i class="fas fa-microphone"></i>
             </section>
             <!-- fine sezione input messaggio -->
