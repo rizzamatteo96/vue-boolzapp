@@ -235,7 +235,15 @@ const app = new Vue({
         // filtro per lista utenti
         userFilter : '',
         // testo del messaggio
-        userMessage : ''
+        userMessage : '',
+        // risposte casuali da utente fake
+        fakeUserMsg : [
+            'Heyyyyyyy',
+            'Si può fare',
+            'Bella sta cosa',
+            'Ok👍',
+            'Ottima idea'
+        ]
     },
     methods: {
         // funzione che mi seleziona l'utente quando ci vado a cliccare con il mouse
@@ -259,6 +267,11 @@ const app = new Vue({
         actualDT : function(){
             let now = dayjs();
             return now.format('DD/MM/YYYY') + ' ' + now.format('HH:mm:ss')
+        },
+
+        // funzione che estrae un numero random
+        randomNum : function(min,max){
+            return Math.floor(Math.random() * (max - min + 1) ) + min;
         },
 
         // funzione che mi inserisce il messaggio scritto SOLO SE c'è del testo all'interno dell'input
@@ -295,7 +308,7 @@ const app = new Vue({
                         } else {
                             arrayMsg.push({
                                 date: app.actualDT(),
-                                text: 'ok',
+                                text: app.fakeUserMsg[app.randomNum(0,app.fakeUserMsg.length-1)],
                                 status: 'received'
                             });
                             
