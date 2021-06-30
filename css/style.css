@@ -245,6 +245,10 @@ header .user{
     clear: both;
 }
 
+.blue-tick{
+    color: lightskyblue;
+}
+
 .received{
     background-color: #fff;
     float: left;

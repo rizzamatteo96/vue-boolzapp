@@ -111,6 +111,7 @@
                             {{message.text}}
                             <div class="date-time-msg">
                                 {{message.date}}
+                                <i v-if="message.status == 'sent'" :class="(message.status == 'sent' && message.readed) ? 'blue-tick' : ''" class="fas fa-check-double"></i>
                             </div>
                             <!-- inizio menu drop down -->
                             <div class="open-menu pointer" @click="msgMenu(indice)">

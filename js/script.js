@@ -10,12 +10,14 @@ const app = new Vue({
                     {
                         date: '10/01/2021 15:30:55',
                         text: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     },
                     {
                         date: '10/01/2021 15:50:00',
                         text: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     },
                     {
                         date: '10/01/2021 16:15:22',
@@ -35,7 +37,8 @@ const app = new Vue({
                     {
                         date: '20/03/2020 16:30:00',
                         text: 'Ciao come stai?',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     },
                     {
                         date: '20/03/2020 16:30:55',
@@ -45,7 +48,8 @@ const app = new Vue({
                     {
                         date: '20/03/2020 16:35:00',
                         text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     }
                 ],
                 lastSeen: '',
@@ -60,7 +64,8 @@ const app = new Vue({
                     {
                         date: '20/03/2021 16:30:00',
                         text: 'Lo zioooooooooooooooo',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     },
                     {
                         date: '20/03/2021 16:30:55',
@@ -70,7 +75,8 @@ const app = new Vue({
                     {
                         date: '20/03/2021 16:35:00',
                         text: 'Ciaooooooooooooo',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     }
                 ],
                 lastSeen: '',
@@ -85,7 +91,8 @@ const app = new Vue({
                     {
                         date: '20/03/2021 16:30:00',
                         text: 'Ciao Gino, come va la vita?',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     },
                     {
                         date: '20/03/2021 16:30:55',
@@ -95,7 +102,8 @@ const app = new Vue({
                     {
                         date: '20/03/2021 16:35:00',
                         text: 'Si può fare',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     }
                 ],
                 lastSeen: '',
@@ -110,7 +118,8 @@ const app = new Vue({
                     {
                         date: '20/03/2021 16:30:00',
                         text: 'Lo ziooooooooooooooooooo ',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     },
                     {
                         date: '20/03/2021 16:30:55',
@@ -120,7 +129,8 @@ const app = new Vue({
                     {
                         date: '20/03/2021 16:35:00',
                         text: 'Vado nell\'altra chat',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     }
                 ],
                 lastSeen: '',
@@ -135,7 +145,8 @@ const app = new Vue({
                     {
                         date: '20/03/2021 16:30:00',
                         text: 'Ehy! Pizzata stasera?',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     },
                     {
                         date: '20/03/2021 16:30:55',
@@ -145,12 +156,14 @@ const app = new Vue({
                     {
                         date: '20/03/2021 16:38:00',
                         text: '👍',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     },
                     {
                         date: '20/03/2021 16:40:00',
                         text: 'A che ora?',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     },
                     {
                         date: '20/03/2021 16:40:30',
@@ -170,7 +183,8 @@ const app = new Vue({
                     {
                         date: '20/03/2021 16:30:00',
                         text: 'Stasera cena liquida?',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     },
                     {
                         date: '20/03/2021 16:30:55',
@@ -180,7 +194,8 @@ const app = new Vue({
                     {
                         date: '20/03/2021 16:35:00',
                         text: '🎉',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     }
                 ],
                 lastSeen: '',
@@ -195,7 +210,8 @@ const app = new Vue({
                     {
                         date: '20/03/2021 16:30:00',
                         text: 'Allora come va la vita?',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     },
                     {
                         date: '20/03/2021 16:30:55',
@@ -205,7 +221,8 @@ const app = new Vue({
                     {
                         date: '20/03/2021 16:35:00',
                         text: 'Mi piacerebbe.😊',
-                        status: 'sent'
+                        status: 'sent',
+                        readed: true
                     }
                 ],
                 lastSeen: '',
