@@ -306,10 +306,18 @@ const app = new Vue({
         // funzione che aggiorna la variabile last seen e last message di tutti gli oggetti
         updateLastSeen : function(){
             this.contacts.forEach(item => {
-                const lastSeen = item.messages[item.messages.length - 1].date;
+                let indiceMsg = 0;
+                // controllo qual'è l'ultimo messaggio RICEVUTO
+                item.messages.forEach((item,index) => {
+                    if(item.status == 'received'){
+                        indiceMsg = index;
+                    }
+                });
+
+                const lastSeen = item.messages[indiceMsg].date;
                 item.lastSeen = lastSeen.substr(11, 5);
 
-                const lastMsg = item.messages[item.messages.length - 1].text;
+                const lastMsg = item.messages[indiceMsg].text;
                 item.lastMsg = lastMsg;
 
             });
