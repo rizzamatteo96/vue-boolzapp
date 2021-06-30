@@ -287,7 +287,7 @@ const app = new Vue({
         // filtro per lista utenti
         userFilter : '',
         // abilita filtro per chat
-        enableSearch : true,
+        enableSearch : false,
         // filtro per la chat
         chatFilter : '',
         // testo del messaggio
