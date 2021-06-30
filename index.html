@@ -99,7 +99,7 @@
                 </div>
                 <div class="icons">
                     <input id="chat-src" v-if="enableSearch" type="text" v-model="chatFilter" placeholder="Ricerca nei messaggi..." @keyup="filterMsg">
-                    <i class="fas fa-search" :class="(enableSearch)? 'txt-black' : ''" @click="enableSearch = (enableSearch)?false:true"></i>
+                    <i class="fas fa-search" :class="(enableSearch)? 'txt-black' : ''" @click="(enableSearch = (enableSearch)?false:true); chatFilter = ''; filterMsg();"></i>
                     <i class="fas fa-paperclip"></i>
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
