@@ -202,6 +202,28 @@ header .user{
     white-space: nowrap;
 }
 
+.chat-menu{
+    position: absolute;
+    top: 60px;
+    right: 17px;
+    z-index: 1000;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    background-color: white;
+    list-style: none;
+    color: gray;
+}
+
+.chat-menu li {
+    padding: 10px 20px;
+}
+
+.chat-menu li:hover{
+    color: black;
+    background-color: lightgray;
+    cursor: pointer;
+}
+
 /* CHAT */
 .chat{
     height: calc(100% - 140px);

@@ -99,9 +99,12 @@
                 </div>
                 <div class="icons">
                     <input id="chat-src" v-if="enableSearch" type="text" v-model="chatFilter" placeholder="Ricerca nei messaggi..." @keyup="filterMsg">
-                    <i class="fas fa-search" :class="(enableSearch)? 'txt-black' : ''" @click="(enableSearch = (enableSearch)?false:true); chatFilter = ''; filterMsg();"></i>
+                    <i class="fas fa-search" :class="(enableSearch)? 'txt-black' : ''" @click="enableSearch = !enableSearch; chatFilter = ''; filterMsg();"></i>
                     <i class="fas fa-paperclip"></i>
-                    <i class="fas fa-ellipsis-v"></i>
+                    <i class="fas fa-ellipsis-v" :class="(chatMenu)? 'txt-black' : ''" @click="chatMenu = !chatMenu"></i>
+                    <ul v-if="chatMenu" class="chat-menu" @click="chatMenu = !chatMenu">
+                        <li @click="deleteChat()">Elimina tutti i messaggi</li>
+                    </ul>
                 </div>
             </header>
             <!-- fine header dx -->
@@ -117,7 +120,7 @@
                                 <i v-if="message.status == 'sent'" :class="(message.status == 'sent' && message.readed) ? 'blue-tick' : ''" class="fas fa-check-double"></i>
                             </div>
                             <!-- inizio menu drop down -->
-                            <div class="open-menu pointer" @click="message.openMenu = (message.openMenu)? false : true">
+                            <div class="open-menu pointer" @click="message.openMenu = !message.openMenu">
                                 <i class="fas fa-chevron-down"></i>
                                 <div :id="'dropDown' + indice" class="drop-menu" :class="(message.openMenu) ? 'd-block' : 'd-none'">
                                     <ul class="list-none">

@@ -292,6 +292,8 @@ const app = new Vue({
         chatFilter : '',
         // testo del messaggio
         userMessage : '',
+        // abilita menu chat
+        chatMenu : false,
         // risposte casuali da utente fake
         fakeUserMsg : [
             'Heyyyyyyy',
@@ -409,6 +411,15 @@ const app = new Vue({
             }, 10);
 
             this.updateLastSeen();
+        },
+
+        // funzione che svuota la chat del contatto attivo
+        deleteChat : function(){            
+            const userConf = confirm('SEI SICURO DI VOLER CANCELLARE LA CHAT?');
+                if(userConf){
+                    // console.log(index);
+                    this.contacts[this.selUser].messages = [];
+                }
         },
 
         // funzione che filtra i messaggi presenti nella chat con quello che l'utente cerca
