@@ -456,8 +456,6 @@ const app = new Vue({
                     item.lastSeen = lastSeen;
                 }
 
-
-
                 const lastMsg = item.messages[indiceMsg].text;
                 item.lastMsg = lastMsg;
 
