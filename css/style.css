@@ -164,6 +164,7 @@ header .icons i{
 .last-hour{
     font-size: 0.8rem;
     color: grey;
+    text-align: end;
 }
 
 #users-list ul li:not(.user-select):hover{

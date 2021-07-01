@@ -432,8 +432,20 @@ const app = new Vue({
                     }
                 });
 
+                let today = this.actualDT();
+                today = today.substr(0,10);
+                console.log(today);
+
                 const lastSeen = item.messages[indiceMsg].date;
-                item.lastSeen = lastSeen.substr(11, 5);
+
+                if(today == lastSeen.substr(0,10)){
+                    // console.log('ciao');
+                    item.lastSeen = lastSeen.substr(11, 5);
+                } else {
+                    item.lastSeen = lastSeen;
+                }
+
+
 
                 const lastMsg = item.messages[indiceMsg].text;
                 item.lastMsg = lastMsg;
